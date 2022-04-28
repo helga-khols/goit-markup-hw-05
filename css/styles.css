@@ -78,6 +78,7 @@ img {
 .site-nav {
   margin-left: 90px;
   display: flex;
+  /* align-items: baseline; */
 }
 
 .site-nav .link {
@@ -89,6 +90,7 @@ img {
   letter-spacing: 0.02em;
   color: var(--main-text-color);
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link.current {
   color: var(--accent-color);
@@ -101,6 +103,13 @@ img {
 .nav-item {
   margin-right: 50px;
 }
+
+/* .site-nav::after {
+  content: '';
+  height: 1px;
+  width: 60px;
+  background-color: var(--accent-color);
+} */
 
 .nav-item:last-child {
   margin-right: 0;
@@ -143,6 +152,7 @@ img {
 
 .contact-item:last-child {
   margin-right: 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-item:hover,
@@ -165,6 +175,7 @@ img {
   text-decoration: none;
   display: flex;
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-link:hover,
 .contact-link:focus {
@@ -205,16 +216,21 @@ img {
   min-width: 200px;
   padding-top: 10px;
   padding-bottom: 10px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.button:focus,
+.button:hover {
+  color: var(--main-text-color);
+}
+
 .center-button {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
 }
-.button:focus {
-  color: var(--main-text-color);
-}
+
 .advantage {
   background-color: var(--main-bg-color);
 }
@@ -242,6 +258,8 @@ img {
   align-items: center;
   justify-content: center;
   fill: black;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .advantage-card:hover {
@@ -273,8 +291,27 @@ img {
   display: flex;
   justify-content: space-between;
 }
-.example-img:not(:last-child) {
+.example-card:not(:last-child) {
   margin-right: 30px;
+}
+
+.example-cover-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--main-bg-color);
+  position: absolute;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  background: rgba(47, 48, 58, 0.8);
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.example-card-wrap {
+  position: relative;
 }
 .team-members {
   display: flex;
@@ -329,6 +366,8 @@ img {
   align-items: center;
   justify-content: center;
   fill: #afb1b8;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-member-link:hover,
@@ -368,6 +407,7 @@ img {
   align-items: center;
   justify-content: center;
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover,
@@ -398,6 +438,7 @@ img {
   line-height: 1.71;
   color: var(--main-bg-color);
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .location:focus,
 .location:hover {
@@ -425,6 +466,7 @@ img {
   font-style: normal;
   color: var(--footer-text-color);
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress .link:focus,
 .adress .link:hover {
@@ -455,6 +497,7 @@ img {
   align-items: center;
   justify-content: center;
   fill: var(--main-bg-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover,
 .social-link:focus {
@@ -490,6 +533,9 @@ img {
   border-radius: 4px;
   padding: 6px 22px;
   border: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter:hover,
 .filter:focus {
@@ -522,6 +568,27 @@ img {
 }
 .portfolio-card {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-hover-wrap {
+  position: relative;
+}
+.portfolio-hover-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--main-bg-color);
+  background-color: rgba(33, 150, 243, 0.9);
+  position: absolute;
+  height: 100%;
+  top: 0;
+  text-align: left;
+  padding-top: 63px;
+  padding-right: 24px;
+  padding-left: 24px;
+  padding-bottom: 63px;
 }
 
 .portfolio-card:hover,
